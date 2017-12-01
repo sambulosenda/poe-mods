@@ -2,7 +2,8 @@ language: node_js
 script:
   - npm run format:check
   - npm run lint
-  - rm -rf /tmp/flow
+  - echo $TMPDIR
+  - rm -rf "$TMPDIR/flow"
   - npm run flow
   - npm run test:ci
   - npm run coveralls
